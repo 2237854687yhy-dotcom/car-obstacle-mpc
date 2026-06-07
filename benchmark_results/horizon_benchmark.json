@@ -1,0 +1,138 @@
+{
+  "best_horizon_steps": 6,
+  "selection_rule": "Among safe runs that reached the goal with no solver failures, choose the fastest mean solve time within 0.03 m of the best final distance.",
+  "rows": [
+    {
+      "horizon_steps": 4,
+      "steps": 39,
+      "total_runtime_s": 0.12712729199847672,
+      "mean_solve_ms": 2.9475907692987957,
+      "max_solve_ms": 36.09304199926555,
+      "final_distance_m": 0.213322992340041,
+      "min_clearance_margin_m": 8.277704621750814e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 6,
+      "steps": 39,
+      "total_runtime_s": 0.12550608400124474,
+      "mean_solve_ms": 3.0869060001117385,
+      "max_solve_ms": 26.986708000549697,
+      "final_distance_m": 0.14185509879366776,
+      "min_clearance_margin_m": 6.933652252349987e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 8,
+      "steps": 38,
+      "total_runtime_s": 0.1376833340000303,
+      "mean_solve_ms": 3.449677526269194,
+      "max_solve_ms": 33.40320799907204,
+      "final_distance_m": 0.1686499273505683,
+      "min_clearance_margin_m": 6.328987500747729e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 10,
+      "steps": 38,
+      "total_runtime_s": 0.19261891699898115,
+      "mean_solve_ms": 4.8632862102941115,
+      "max_solve_ms": 61.598375001267414,
+      "final_distance_m": 0.24902042404768898,
+      "min_clearance_margin_m": 7.043423277952598e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 12,
+      "steps": 38,
+      "total_runtime_s": 0.2010945839992928,
+      "mean_solve_ms": 5.050453947564836,
+      "max_solve_ms": 58.334084000307485,
+      "final_distance_m": 0.24884293781523928,
+      "min_clearance_margin_m": 5.83253007002682e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 16,
+      "steps": 38,
+      "total_runtime_s": 0.2644536249990779,
+      "mean_solve_ms": 6.6402598420992085,
+      "max_solve_ms": 91.50387499903445,
+      "final_distance_m": 0.24824826468707195,
+      "min_clearance_margin_m": 5.107881928534397e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 20,
+      "steps": 37,
+      "total_runtime_s": 0.2523541250011476,
+      "mean_solve_ms": 6.425450405446542,
+      "max_solve_ms": 87.90050000061456,
+      "final_distance_m": 0.24276834013283016,
+      "min_clearance_margin_m": 5.6507637236080654e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 24,
+      "steps": 37,
+      "total_runtime_s": 0.23480012499931036,
+      "mean_solve_ms": 5.876729729779244,
+      "max_solve_ms": 40.3937089995452,
+      "final_distance_m": 0.24301007091674548,
+      "min_clearance_margin_m": 5.623208065852481e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 28,
+      "steps": 37,
+      "total_runtime_s": 0.2453630840009282,
+      "mean_solve_ms": 6.088488702811741,
+      "max_solve_ms": 28.147332999651553,
+      "final_distance_m": 0.24344659890350734,
+      "min_clearance_margin_m": 5.690889370857377e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 32,
+      "steps": 37,
+      "total_runtime_s": 0.2711373330002971,
+      "mean_solve_ms": 6.694391918957794,
+      "max_solve_ms": 22.36554199953389,
+      "final_distance_m": 0.24351541416874792,
+      "min_clearance_margin_m": 5.8088085230778574e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 36,
+      "steps": 37,
+      "total_runtime_s": 0.2890969159998349,
+      "mean_solve_ms": 7.120819756695513,
+      "max_solve_ms": 17.080125000575208,
+      "final_distance_m": 0.2435721903575734,
+      "min_clearance_margin_m": 5.816374437639382e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    },
+    {
+      "horizon_steps": 40,
+      "steps": 37,
+      "total_runtime_s": 0.3233742499996879,
+      "mean_solve_ms": 7.967042784052004,
+      "max_solve_ms": 21.87887500076613,
+      "final_distance_m": 0.24357860767209052,
+      "min_clearance_margin_m": 5.8175406603133695e-08,
+      "solver_failures": 0,
+      "reached_goal": true
+    }
+  ]
+}

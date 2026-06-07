@@ -22,18 +22,18 @@ MPC 每一步求解一个有限时域最优控制问题：
 推荐创建项目内虚拟环境：
 
 ```bash
-cd /Users/a1/Documents/Codex/2026-06-07/casadi-mpc/work/car_obstacle_mpc
+cd "/Users/a1/Library/Mobile Documents/com~apple~CloudDocs/work/car_obstacle_mpc"
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-如果你使用 `uv`：
+如果你使用已经创建好的 conda 环境 `car`：
 
 ```bash
-cd /Users/a1/Documents/Codex/2026-06-07/casadi-mpc/work/car_obstacle_mpc
-uv venv
-uv pip install -r requirements.txt
+conda activate car
+cd "/Users/a1/Library/Mobile Documents/com~apple~CloudDocs/work/car_obstacle_mpc"
+python -m pip install -r requirements.txt
 ```
 
 ## 运行
@@ -42,16 +42,63 @@ uv pip install -r requirements.txt
 python run_demo.py
 ```
 
-默认会把结果图保存到：
+默认会把结果图保存到项目目录：
 
 ```text
-/Users/a1/Documents/Codex/2026-06-07/casadi-mpc/outputs/car_obstacle_mpc_trajectory.png
+car_obstacle_mpc_trajectory.png
 ```
 
 也可以自定义输出路径：
 
 ```bash
 python run_demo.py --output /tmp/mpc_result.png
+```
+
+## 查看 MPC 预测步动画
+
+生成 GIF 动画：
+
+```bash
+python run_demo.py --no-show --animate
+```
+
+默认会保存到项目目录：
+
+```text
+mpc_prediction.gif
+```
+
+也可以自定义动画输出路径和帧率：
+
+```bash
+python run_demo.py --no-show --animate --animation-output ./mpc_prediction.gif --animation-fps 8
+```
+
+## 测试不同预测步的耗时和精度
+
+运行 benchmark：
+
+```bash
+python benchmark_horizon.py
+```
+
+默认会测试：
+
+```text
+4, 6, 8, 10, 12, 16, 20, 24, 28, 32, 36, 40
+```
+
+输出会保存在项目目录的 `benchmark_results/`：
+
+- `horizon_benchmark.csv`：每个预测步的数值结果
+- `horizon_benchmark.json`：机器可读结果和推荐预测步
+- `horizon_benchmark.png`：耗时/精度折线图
+- `horizon_benchmark_report.md`：推荐结论和表格
+
+也可以自定义要测试的预测步：
+
+```bash
+python benchmark_horizon.py --horizons 10,15,20,25,30,35
 ```
 
 ## 可以改的参数

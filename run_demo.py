@@ -22,8 +22,25 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("/Users/a1/Documents/Codex/2026-06-07/casadi-mpc/outputs/car_obstacle_mpc_trajectory.png"),
+        default=PROJECT_ROOT / "car_obstacle_mpc_trajectory.png",
         help="Path where the trajectory plot will be saved.",
+    )
+    parser.add_argument(
+        "--animate",
+        action="store_true",
+        help="Save an animation showing how the MPC prediction horizon changes.",
+    )
+    parser.add_argument(
+        "--animation-output",
+        type=Path,
+        default=PROJECT_ROOT / "mpc_prediction.gif",
+        help="Path where the prediction animation will be saved. Use .gif by default; .mp4 needs ffmpeg.",
+    )
+    parser.add_argument(
+        "--animation-fps",
+        type=int,
+        default=6,
+        help="Frames per second for the saved animation.",
     )
     parser.add_argument(
         "--no-show",
@@ -35,21 +52,25 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    if args.no_show:
+    if args.no_show or args.animate:
         os.environ.setdefault("MPLBACKEND", "Agg")
 
-    from car_obstacle_mpc.plotting import plot_simulation
+    from car_obstacle_mpc.plotting import plot_simulation, save_prediction_animation
 
     config = DemoConfig()
 
     result = run_closed_loop(config)
     plot_simulation(result, config, args.output, show=not args.no_show)
+    if args.animate:
+        save_prediction_animation(result, config, args.animation_output, fps=args.animation_fps)
 
     final_xy = result.states[-1, :2]
     goal_xy = config.goal[:2]
     distance_to_goal = ((final_xy - goal_xy) ** 2).sum() ** 0.5
 
     print(f"Saved plot: {args.output}")
+    if args.animate:
+        print(f"Saved animation: {args.animation_output}")
     print(f"Steps: {len(result.controls)}")
     print(f"Final state: {result.states[-1]}")
     print(f"Distance to goal: {distance_to_goal:.3f} m")
