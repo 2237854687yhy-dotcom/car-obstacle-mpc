@@ -1,0 +1,17 @@
+[project]
+name = "car-obstacle-mpc"
+version = "0.1.0"
+description = "A small CasADi nonlinear MPC demo for car-like obstacle avoidance."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "casadi>=3.6",
+    "matplotlib>=3.8",
+    "numpy>=1.24",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

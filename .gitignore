@@ -1,0 +1,6 @@
+.venv/
+.cache/
+.matplotlib/
+.pycache/
+__pycache__/
+*.py[cod]
