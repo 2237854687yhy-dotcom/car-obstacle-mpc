@@ -56,6 +56,12 @@ python run_demo.py --output /tmp/mpc_result.png
 
 ## 查看 MPC 预测步动画
 
+仓库里已经包含一份示例动画：
+
+```text
+assets/mpc_animation.gif
+```
+
 生成 GIF 动画：
 
 ```bash
@@ -75,6 +81,12 @@ python run_demo.py --no-show --animate --animation-output ./mpc_prediction.gif -
 ```
 
 ## 测试不同预测步的耗时和精度
+
+仓库里已经包含一份 CSV 测试表格：
+
+```text
+reports/test_results.csv
+```
 
 运行 benchmark：
 
